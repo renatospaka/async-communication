@@ -1,0 +1,23 @@
+version: "3.5"
+
+services:
+  app:
+    build: .
+    # entrypoint: dockerize -wait tcp://db:5432 -timeout 40s ./.docker/entrypoint.sh
+    entrypoint: ./.docker/entrypoint.sh
+    container_name: api-1
+    ports:
+      - 3009:3000
+    volumes:
+      - .:/home/node/app
+    networks:
+      - app-network
+      - rabbit-ms_network
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+networks:
+  app-network:
+    driver: bridge
+  rabbit-ms_network:
+    external: true
