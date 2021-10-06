@@ -1,0 +1,6 @@
+POST http://localhost:3000/to-app2
+Content-Type: "application/json"
+
+{
+  "message": "from app1"
+}
