@@ -3,6 +3,7 @@ import { ConfigModule } from "@nestjs/config";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { BrokerModule } from "./utils/broker/broker.module";
+import { ReaderService } from "./reader/reader.service";
 
 @Module({
   imports: [
@@ -12,6 +13,6 @@ import { BrokerModule } from "./utils/broker/broker.module";
     BrokerModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ReaderService],
 })
 export class AppModule {}

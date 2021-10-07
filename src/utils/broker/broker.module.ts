@@ -14,7 +14,11 @@ https://github.com/golevelup/nestjs/tree/master/packages/rabbitmq#sending-messag
     RabbitMQModule.forRoot(RabbitMQModule, {
       exchanges: [
         {
-          name: "to-app2",
+          name: process.env.APP1_TO_EXCHANGE_NAME,
+          type: "direct",
+        },
+        {
+          name: process.env.APP2_TO_EXCHANGE_NAME,
           type: "direct",
         },
       ],
