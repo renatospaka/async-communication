@@ -5,13 +5,13 @@ import { AppService } from "src/app.service";
 let counter = 0;
 
 @Injectable()
-export class ReaderService {
+export class App1Service {
   constructor(private appService: AppService) {}
 
   @RabbitSubscribe({
-    exchange: process.env.APP1_FROM_EXCHANGE_NAME,
-    routingKey: process.env.APP1_FROM_ROUTING_KEY,
-    queue: process.env.APP1_FROM_QUEUE,
+    exchange: process.env.APP2_TO_EXCHANGE_NAME,
+    routingKey: process.env.APP2_TO_ROUTING_KEY,
+    queue: process.env.APP2_TO_QUEUE,
   })
   public async receiveFromApp2(data: any) {
     const payload = await JSON.stringify(data);

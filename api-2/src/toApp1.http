@@ -1,0 +1,6 @@
+POST http://localhost:3002/to-app1
+Content-Type: "application/json"
+
+{
+  "scope": "incoming from app1"
+}
