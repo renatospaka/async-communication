@@ -11,13 +11,13 @@ services:
     volumes:
       - .:/home/node/app
     networks:
-      - app-network
+      # - app-network
       - rabbit-ms_network
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
 
 networks:
-  app-network:
-    driver: bridge
+  # app-network:
+  #   driver: bridge
   rabbit-ms_network:
     external: true

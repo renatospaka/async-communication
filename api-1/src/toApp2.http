@@ -1,5 +1,6 @@
-POST http://api-1:3001/to-app2
-# POST http://localhost:3001/to-app2
+POST http://localhost:3001/to-app2
+# POST http://api:3001/to-app2
+# POST http://host.docker.internal:3001/to-app2
 Content-Type: "application/json"
 
 {

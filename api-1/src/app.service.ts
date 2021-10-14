@@ -13,22 +13,15 @@ export class AppService {
     return `Message ${JSON.stringify(payload)} sent to the app2!`;
   }
 
-  async fromApp2(payload: any) {
-    const exchange = process.env.APP2_FROM_EXCHANGE_NAME;
-    const bindingKey = process.env.APP2_FROM_ROUTING_KEY;
+  // async fromApp2(payload: any) {
+  //   const exchange = process.env.APP2_FROM_EXCHANGE_NAME;
+  //   const bindingKey = process.env.APP2_FROM_ROUTING_KEY;
 
-    await this.brokerRabbit.publishMessage(exchange, bindingKey, payload);
-    return `Message ${JSON.stringify(payload)} sent from app2!`;
-  }
+  //   await this.brokerRabbit.publishMessage(exchange, bindingKey, payload);
+  //   return `Message ${JSON.stringify(payload)} sent from app2!`;
+  // }
 
   doSomeCrazyStuff(originalMessage?: string) {
-    //     const payload = `
-    // {
-    //   "scope": "incoming from app2"
-    // }
-    //     `;
-    //     setTimeout(() => this.fromApp2(payload), Math.floor(Math.random() * 2000));
-    //   }
-    console.log(originalMessage);
+    // console.log(originalMessage);
   }
 }

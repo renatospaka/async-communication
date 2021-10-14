@@ -13,8 +13,11 @@ services:
       - RABBITMQ_DEFAULT_USER=admin 
       - RABBITMQ_DEFAULT_PASS=admin
     networks:
-      - network
+      # - network
+      - rabbit-ms_network
 
 networks:
-  network:
-    driver: bridge
+  # app-network:
+  #   driver: bridge
+  rabbit-ms_network:
+    external: true

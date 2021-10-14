@@ -22,6 +22,6 @@ export class AppService {
   // }
 
   doSomeCrazyStuff(originalMessage?: string) {
-    console.log(originalMessage);
+    // console.log(originalMessage);
   }
 }
